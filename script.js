@@ -1,4 +1,5 @@
 // // Learnig javascript basics
+
 // console.log("Hello, World!");
 
 
@@ -1211,4 +1212,264 @@
 
 
 // Declare a Read-Only Variable with the const Keyword
- 
+// function printManyTimes(str) {
+//   "use strict";
+//   const SENTENCE = str + " is cool!"; // we use const here because we don't want SENTENCE to be reassigned, when using const  t's common to use uppercase variable names to indicate that they are constants
+//   for (let i = 0; i < str.length; i+=2) {
+//     console.log(SENTENCE);
+//   }
+// }
+// printManyTimes("freeCodeCamp");
+
+
+
+// Mutate an Array Declared with const
+// const s = [5, 6, 7];
+// function editInPlace() {
+//   "use strict";
+  // s = [1,2,3]; // this will give an error because s is declared with const
+//   s[0] = 2;
+//   s[1] = 5;
+//   s[2] = 7;
+// }
+// editInPlace();
+// console.log(s);
+
+
+
+// Prevent Object Mutation
+// function freezeObj() {
+//   "use strict";
+//   const MATH_CONSTANTS = {
+//     PI: 3.14
+//   };
+//   Object.freeze(MATH_CONSTANTS); // this will prevent any changes to the MATH_CONSTANTS object
+  // try {
+  //   MATH_CONSTANTS.PI = 99; // this will give an error because MATH_CONSTANTS is frozen
+//   } catch(ex) {
+//     console.log(ex);
+//   }
+//   return MATH_CONSTANTS.PI;
+// }
+// const PI = freezeObj();
+// console.log(PI);
+
+
+
+// Use Arrow Functions to Write Concise Anonymous Functions
+// const magic = () => new Date();
+// console.log(magic());
+
+
+
+// Write Arrow Functions with Parameters
+// var myConcat = (arr1, arr2) => arr1.concat(arr2);
+// console.log(myConcat([1, 2], [3, 4, 5]));
+
+
+
+// Write Higher Order Arrow Functions
+// const realNumberArray = [4, 5.6, -9.8, 3.14, 42, -2.1];
+// const squareList = (arr) => {
+//   const squaredIntegers = arr.filter(num => Number.isInteger(num) && num > 0).map(x => x * x); // filters the array to include only positive integers and then maps those integers to their squares and returns a new array ,also 
+//   return squaredIntegers;
+// }
+// const squaredIntegers = squareList(realNumberArray);
+// console.log(squaredIntegers);
+
+
+
+// Write Higher Order Arrow Functions
+// const increment = (function() {
+//   return function increment(number, value = 1) {
+//     return number + value;
+//   };
+// })();
+// console.log(increment(5, 2));
+// console.log(increment(5));
+
+
+
+//Use the Rest Parameter with Function Parameters
+// const sum = (function() {
+//   return function sum(...args) {
+//     return args.reduce((a, b) => a + b, 0);
+//   }
+// })();
+// console.log(sum(1, 2, 3));
+
+
+
+// Use the Spread operator to Evaluate Arrays In Place
+// const arr1 = ['Jan', 'FEB', 'MAR', 'APR', 'MAY'];
+// let arr2;
+// (function() {
+//   arr2 = [...arr1];
+//   arr1[0] = 'potato'
+
+// })();
+// console.log(arr2);
+
+
+
+//Use Destructing Assingnment to assign Variables from Objects
+// var voxel = {x: 3.6, y: 7.4, z: 6.54 };
+
+// const {x : a, y : b, z : c} = voxel; //a = 3.6, b = 7.4, c = 6.54
+
+// const AVG_TEMPERATURES = {
+//   today: 77.5,
+//   tomorrow: 79
+// };
+// function getTempOfTmrw(avgTemperatures) {
+//   "use strict";
+
+//   const {tomorrow : tempOfTomorrow} = avgTemperatures;
+
+//   return tempOfTomorrow
+// }
+// console.log(getTempOfTmrw(AVG_TEMPERATURES));
+
+
+
+//Destructuring Assignment with nested Objects
+// const LOCAL_FORCAST = {
+//   today: { min: 72, max: 83},
+//   tomorrow: { Min: 73.3, max: 84.6}
+// };
+// function getMaxOfTmrw(forecast){
+//   "use strict";
+
+//   const  {tomorrow: {max: maxOfTomorrow}} = forecast;
+
+//   return maxOfTomorrow;
+// }
+// console.log(getMaxOfTmrw(LOCAL_FORCAST))
+
+
+
+// Use Destructuring Assignment to Assign Variables from Arrays
+// const [z, x, ,y] = [1, 2, 3, 4, 5, 6];
+// console.log(z, x, y)
+
+// let a = 8 , b = 6;
+// (() => {
+//   "use strict";
+//   [a, b] = [ b, a];
+
+// })();
+// console.log(a);
+// console.log(b);
+
+
+
+// Use Destructuring Assignmnent with the Rest Operator
+// const source = [1,2,3,4,5,6,7,8,9,10];
+// function removeFirstTwo(list) {
+//   const [ , , ...arr] = list; 
+
+//   return arr;
+// }
+// const arr = removeFirstTwo(source)
+// console.log(arr);
+// console.log(source);
+
+
+
+// Use Destructing Assingnment to pass an Object as a Function's Parameters
+// const stats = {
+//   max: 56.78,
+//   standard_deviation: 4.34,
+//   median: 34.54,
+//   mode: 23.87,
+//   min: -0.75,
+//   average: 35.85
+// };
+// const half = (function() {
+
+//   return function half({ max, min}) {
+//     return (max + min)/ 2.0;
+//   };
+// })();
+// console.log(stats)
+// console.log(half(stats))
+
+
+
+// Crete Strings using Template Literals
+// const person = {
+//   name: "Zodiac Hashbro",
+//   age: 56
+// };
+
+// // Template literal with multi-line and string interpolation
+// const greeting = `Hello, my name is ${person.name}!
+// I am ${person.age} years old.`;
+
+// console.log(greeting)
+
+
+
+// const result = {
+//   success: ["max-length", "no-amd", "prefer-arrow-functions"],
+//   failure: ["no-var", "var-on-top", "linebreak"],
+//   skipped: [ "id-blacklist", "no-dup-keys"]
+// };
+// function makeList(arr) {
+//   const resultDisplayArray = [];
+//   for(let i = 0; i < arr.length; i++){
+//     resultDisplayArray.push(`<li class="text-message">${arr[i]}</li>`)
+//   }
+
+//   return resultDisplayArray;
+// }
+/**
+ * makeLList(return.failure) should return;
+ * [`<li class="text-warning">no-var</li>`,
+ * `<li class="text-message">var-on-top</li>`,
+ * `<li class="test-message">linebreak</li>`
+ */
+// const resultDisplayArray = makeList(result.failure); 
+
+// console.log(result)
+
+
+
+// Write Concise Object Literal Declarations Using Simple Fields
+// const createPerson = (name, age, gender) => ({ name, age, gender})
+// console.log(createPerson("Zodiac Hasbro", 56, "male"))
+
+
+
+//Write Cocise Declarative Functions
+// const bicycle = {
+//   gear: 2,
+//   setGear(newGear) {
+//     "use strict";
+//     this.gear= newGear;
+//   }
+// };
+
+// bicycle.setGear(3)
+// console.log(bicycle.gear)
+
+
+
+// Use class Syntax to Define a Constructor Function
+// function makeClass() {
+//   class Vegetable {
+//     constructor(name){
+//       this.name = name;
+//     }
+//   }
+//       return Vegetable 
+
+//   }
+
+// const Vegetable = makeClass();
+// const carrot = new Vegetable("carrot");
+// console.log(carrot.name);
+
+
+
+// Use getters and setters to Control Access to an Object
