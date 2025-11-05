@@ -758,3 +758,456 @@
 // var hatValue = myDog.name;
 // var legValue = myDog.legs;
 // console.log(hatValue, legValue);
+
+
+
+
+// Accessing Object Properties with Bracket Notation
+// var testObj = {
+//   "an entree": "steak",
+//   "my side": "veggies",
+//   "the drink": "water"
+// };
+// var entreeValue = testObj["an entree"];
+// var drinkValue = testObj["the drink"];
+// console.log(entreeValue, drinkValue);
+
+
+
+// Accessing Object Properties with Variables
+// var testObj = {
+//   12: "Namath",
+//   16: "Montana",
+//   19: "Unitas"
+// };
+// var playerNumber = 16;
+// var player = testObj[playerNumber];
+// console.log(player, playerNumber);
+
+
+
+// Updating Object Properties
+// var myDog = {
+//   "name": "Buddy",
+//   "legs": 4,
+//   "tails": 1,
+//   "friends": ["all"]
+// };
+// myDog.name = "ice";
+
+// console.log(myDog.name);
+
+
+
+// Add New Properties to an Object
+// var myDog = {
+//   "name": "Buddy",
+//   "legs": 4,
+//   "tails": 1,
+//   "friends": ["all"]
+// };
+// myDog.bark = "woof!";  
+// console.log(myDog);
+
+
+
+// Delete Properties from an Object
+// var myDog = {
+//   "name": "Buddy",
+//   "legs": 4,
+//   "tails": 1,
+//   "friends": ["all"],
+//   "bark": "woof!"
+// };
+// delete myDog.tails;
+// console.log(myDog);
+
+
+
+// Using Objects for Lookups
+// function phoneticLookup(val) {
+//   var result = "";
+//   var lookup = {
+//     "alpha": "Adams",
+//     "bravo": "Boston",
+//     "charlie": "Chicago",
+//     "delta": "Denver",
+//     "echo": "Easy",
+//     "foxtrot": "Frank"
+//   };
+//   switch(val) {
+//     case "alpha":
+//       result = lookup.alpha;
+//       break;
+//     case "bravo":
+//       result = lookup.bravo;
+//       break;
+//     case "charlie":
+//       result = lookup.charlie;
+//       break;
+//     case "delta":
+//       result = lookup.delta;
+//       break;
+//     case "echo":
+//       result = lookup.echo;
+//       break;
+//     case "foxtrot":
+//       result = lookup.foxtrot;
+//   }
+//   result = lookup[val];
+//   return result;
+// }
+// console.log(phoneticLookup("charlie"));
+
+
+
+//Testing Objects for Properties
+// var myObj = {
+//   gift: "pony",
+//   pet: "kitten",
+//   bed: "sleigh"
+// };
+
+// function checkObj(checkProp) {
+//   if (myObj.hasOwnProperty(checkProp)){
+//     return myObj[checkProp];
+//   }else {
+//     return "not found"
+//   }
+// }
+// console.log(checkObj("gift"));
+
+
+
+// Manipulating Complex Objects
+// var myMusic =[ {
+//   "artist": "Billy Joel",
+//   "title": "Piano man",
+//   "release_year": 1973,
+//   "formats": [
+//     "CD",
+//     "8T",
+//     "LP"
+//   ],
+//   "gold": true
+// },
+// {
+//   "artist": "Beau Carnes",
+//   "title": "Cereal Man",
+//   "release _year": 2003,
+//   "formats": [
+//     "Youtube video"
+//   ]
+// }
+// ];
+
+
+
+//Accessing Nested Objects
+// var myStorage = {
+//   "car": {
+//     "inside": {
+//       "glove box": "maps",
+//       "passanger seats": "jack"
+//     },
+//     "outside":{
+//       "trunk": "jack"
+//     }
+//   }
+// };
+// var gloveBoxContents = myStorage.car.inside["glove box"];
+
+// console.log(gloveBoxContents)
+
+
+
+// Accessing Nested Arrays
+// var myPlants = [
+//   {
+//     type: "flowers",
+//     list: [
+//       "rose",
+//       "tulip",
+//       "danelions"
+//     ]
+//   },
+//   {
+//     type: 'trees',
+//     list: [
+//       "fir",
+//       "pine",
+//       "birch"
+//     ]
+//   }
+// ];
+
+// var secondtree = myPlants[1].list[1];
+
+// console.log(secondtree)
+
+
+
+//Record collection
+// var collection = {
+//   "2548": {
+//     "album":"Slippery When Wet",
+//     "artist": "Bon Jovi",
+//     'tracks': [
+//       "Let it Rock",
+//       "You Give Love a Bad Name"
+//     ]
+//   },
+
+//     "2468" : {
+//       "album": "1999",
+//       "artist": "Prince",
+//       "tracks":[
+//         "1999",
+//         "Little Red Corvette"
+//       ]
+//     },
+//     "1245":{
+//       "artist": "Robert Palmer",
+//       "track":[]
+//     },
+//     "5439":{
+//       "album": "ABBA Gold"
+//     }
+// };
+// keep a cppy of the collection for tests
+// var collectionCopy = JSON.parse(JSON.stringify(collection))
+
+// function updateRecords(id,prop,value){
+//   if (value == ""){
+//     delete collection[id][prop];
+//   }else if (prop === "tracks"){
+//     collection[id][prop] = collection[id][prop] || [];
+//     collection[id][prop].push(value);
+//   } else {
+//     collection[id][prop] = value
+//   }
+
+
+//   return collection
+// }
+// updateRecords(2468, "tracks", "ice")
+// console.log(updateRecords(5439,"artist", "ABBA"))
+
+
+
+// Iterate with While Loop
+// var myArray = [];
+
+// var i = 0;
+// while (i < 10){
+//   myArray.push(i);
+//   i++;
+// }
+// console.log(myArray)
+
+
+
+// Iterate with For Loop
+// var myArray = [];
+// for (var i = 1; i < 6; i++){myArray.push(i)}
+// console.log(myArray)
+
+
+
+// Iterate Odd numbers with a For Loop
+// var myArray = [];
+// for (var i = 0; i < 10; i += 2){
+//   myArray.push(i)
+// }
+// console.log(myArray)
+
+
+
+// Count Backwars with a For Loop
+// var myArray = []
+// for (var i = 9; i > 0;  i -= 2){
+//   myArray.push(i)
+
+// }
+// console.log(myArray)
+
+
+
+//Iterate Through an Array with a For Loop
+// var myArr = [ 2, 3, 4, 5, 6];
+// var total = 0;
+
+// for ( var i =0; i < myArr[i]; i++){
+//   total += myArr[i]
+// }
+// console.log(total)
+
+
+
+//Nesting For Loops
+// function mutiplyAll(arr){
+//   var product = 1;
+
+//   for (var i=0; i < arr.length; i++){
+//     for ( var j =0; j < arr[i].length; j++){
+//     product *= arr[i][j];
+//     }
+
+//     }
+    
+//   return product;
+//   }
+
+
+
+// var product = mutiplyAll([[1,2],[3,4],[5,6,7]])
+// console.log(product)
+
+
+
+// Iterate with Do...While Loops
+// var myArray = [];
+// var i = 10;
+
+// do{
+//   myArray.push(i);
+//   i++;
+// }while (i < 5 )
+
+//   console.log(i,myArray)
+
+
+
+// Profile Lookup
+// var contacts = [
+//   {
+//     "firstName": "Akira",
+//     "lastName": "Laine",
+//     "number": "08033081227",
+//     "likes": [ "Pizza", "Coding", "Brownie Points"]
+//   },
+//   {
+//     "firstName": "Harry",
+//     "lastName": "Potter",
+//     "number": "07030777488",
+//     "likes": ["Hogwarts", "Magic", "Hagrid"]
+//   },
+//   {
+//     "firstName": "Sherlock",
+//     "lastName": "Holmes",
+//     "number": "0702588119",
+//     "likes": ["intreging Casses", "Violin"]
+//   },
+//   {
+//     "firstName": "Kristian",
+//     "lastName": "Vos",
+//     "number": "unknown",
+//     "likes": ["Javascript", "Gaming", "Foxes"]
+//   }
+// ];
+
+// function lookUpProfile(name,prop){
+//   for (var i = 0; i < contacts.length; i++) {
+//     if(contacts[i].firstName === name) {
+//       return contacts[i][prop] || "No such propertiy"
+//     }
+//   }
+//   return "No such contacts"
+
+// }
+
+// var data = lookUpProfile("Akira", "likes")
+
+// console.log(data);
+
+
+
+// Generate Random Fractions
+// function randomFraction(){
+
+//   return Math.random();
+// }
+// console.log(randomFraction());
+
+
+
+// Generate Random Whole Numbers
+// var randomNumbeBetween0and19 = Math.floor(Math.random() * 20);
+
+// function randomWholeNumber() {
+
+//   return Math.floor(Math.random() * 10);
+// }
+// console.log(randomWholeNumber())
+
+
+
+// Generate Random Whole Numbers within a Range
+// function randomRange(myMin, myMax){
+//   return Math.floor(Math.random() * (myMax - myMin + 1)) + myMin;
+// }
+// var myRandom = randomRange(5, 15);
+// console.log(myRandom);
+
+
+
+// Use the parseInt Function
+// function convertToInteger(str){
+//   return parseInt(str);
+// }
+// console.log(convertToInteger("56"))
+
+
+
+// Use the parseInt Fuction with a Redix
+// function convertToInteger(str) {
+//   return parseInt(str, 2)
+// }
+// console.log ( convertToInteger("10011"))
+
+
+
+//Use the Condition (Ternary) Operator
+// function checkEqual(a,b) {
+//   return a === b ? true : false;
+// }
+// console.log(checkEqual(2, 2))
+
+
+
+// Use Multiple Conditional (Ternary) Operators
+// function checkSign(num){
+//   return num > 0 ? "positive" : num < 0 ? "negative" : "zero";
+// }
+// console.log(checkSign(10))
+
+
+
+// Difference Between the var aand let Keywords
+// let catName = "Oliver";
+// let catSound = "Meow!";
+// function catTalk() {
+  "use strict"; // this enables strict mode that catches common coding mistakes
+  // catName = "Fluffy"; // this will give an error because catName is declared with let
+  // catSound = "Purr!";
+  // console.log(catName + " says " + catSound);
+// }
+
+
+
+// Compare Scope of the var and let Keywords
+// function checkScope() {
+//   "use strict";
+//   let i = "function scope"; // if we change let to var here, the function scope i will be overwritten by the block scope i
+//   if (true) {
+//     let i = "block scope";
+//     console.log("Block scope i is: ", i);
+//   } 
+//   console.log("Function scope i is: ", i);
+//   return i;
+// } 
+// checkScope();
+
+
+
+// Declare a Read-Only Variable with the const Keyword
